@@ -18,6 +18,7 @@ env:
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
   AWS_ROLE_NAME: github-actions-ecs-role
   IMAGE_TAG: ${{ github.sha }}
+  VITE_API_URL: http://learn-ecs-backend:8000
 
 jobs:
   docker-ci:
@@ -62,6 +63,7 @@ jobs:
         run: |
           docker buildx build \
             --platform linux/amd64 \
+            --build-arg VITE_API_URL="$VITE_API_URL" \
             --push \
             -f Dockerfile \
             -t ${{ steps.image.outputs.image_uri }} \
