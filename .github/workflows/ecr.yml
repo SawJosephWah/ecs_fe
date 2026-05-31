@@ -18,7 +18,7 @@ env:
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
   AWS_ROLE_NAME: github-actions-ecs-role
   IMAGE_TAG: ${{ github.sha }}
-  VITE_API_URL: http://learn-ecs-backend-service-ukxxlsb6:8000
+  VITE_API_URL: http://ecs-backend.learn.local:8000
 
 jobs:
   docker-ci:
