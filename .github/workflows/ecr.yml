@@ -15,7 +15,7 @@ permissions:
 env:
   AWS_REGION: ap-southeast-1
   ECR_REPOSITORY: learn-ecs-frontend
-  AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+  AWS_ACCOUNT_ID: 277778298664
   AWS_ROLE_NAME: github-actions-ecs-role
   IMAGE_TAG: ${{ github.sha }}
   VITE_API_URL: ${{ secrets.VITE_API_URL }}
